@@ -1,0 +1,15 @@
+D:\testjava\chess02\src\main\java\dao\UserDAO.java
+D:\testjava\chess02\src\main\java\model\User.java
+D:\testjava\chess02\src\main\java\game\PutChessPesponse.java
+D:\testjava\chess02\src\main\java\game\MatcherResponse.java
+D:\testjava\chess02\src\main\java\game\Matcher.java
+D:\testjava\chess02\src\main\java\game\Room.java
+D:\testjava\chess02\src\main\java\util\DBUtil.java
+D:\testjava\chess02\src\main\java\game\OnlineUserManager.java
+D:\testjava\chess02\src\main\java\game\RoomManager.java
+D:\testjava\chess02\src\main\java\game\Request.java
+D:\testjava\chess02\src\main\java\model\JSONResponse.java
+D:\testjava\chess02\src\main\java\game\GameAPI.java
+D:\testjava\chess02\src\main\java\dao\ScoreUpdate.java
+D:\testjava\chess02\src\main\java\Servlet\LoginServlet.java
+D:\testjava\chess02\src\main\java\util\JSONUtil.java

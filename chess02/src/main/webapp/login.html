@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <h1>用户登录</h1>
+        用户ID：<input type="text" v-model="id">
+        <br><br>
+        密码：<input type="password" v-model="password">
+        <br><br>
+        <button @click="login()">登录</button>
+    </div>
+    <!-- 生产环境版本，优化了尺寸和速度 -->
+    <script src="static/vue.js"></script>
+    <script src="static/axios.min.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                id: 1,
+                password: "1"
+            },
+            methods: {
+                login: function () {
+                    //alert("用户名："+this.id+"\n密码："+this.password)
+                    let vm = this;
+                    //发送ajax请求
+                    axios.post("login", {
+                        id: vm.id,
+                        password: vm.password
+                    }).then(function (resp) {
+                        console.log(resp)
+                        let body = resp.data;
+                        if(body.success){//业务操作成功，跳转到首页
+                            window.location.href = `user.html`;
+                            localStorage.setItem("id",vm.id);
+                            localStorage.setItem("integral",body.data);
+                        }else{//业务操作失败，显示错误信息
+                            alert("错误码："+body.code+"\n错误信息："+body.message)
+                             //window.location.href ="user1.html";
+                        }
+                    }).catch(function (err) {
+                        //alert("异常出现")
+                        //window.location.href = `user.html?id=${vm.id}`;
+                        console.error(JSON.stringify(err))
+                    })
+                }
+            }
+        });
+    </script>
+</body>
+</html>
